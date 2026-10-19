@@ -1,0 +1,12 @@
+proj/build/
+proj/build2/
+proj/gen/
+proj/.gradle/
+.gradle/
+build/
+local.properties
+*.jks
+*.keystore
+.idea/
+*.iml
+.DS_Store

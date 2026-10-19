@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.localreader"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="34" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:hardwareAccelerated="true"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
+
+        <activity
+            android:name="com.localreader.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|smallestScreenSize|uiMode">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="content" android:mimeType="text/html" />
+                <data android:scheme="content" android:mimeType="application/xhtml+xml" />
+                <data android:scheme="content" android:mimeType="text/markdown" />
+                <data android:scheme="content" android:mimeType="text/x-markdown" />
+                <data android:scheme="content" android:mimeType="text/plain" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="file" android:host="*" android:mimeType="text/html" />
+                <data android:scheme="file" android:host="*" android:mimeType="application/xhtml+xml" />
+                <data android:scheme="file" android:host="*" android:mimeType="text/markdown" />
+                <data android:scheme="file" android:host="*" android:mimeType="text/x-markdown" />
+                <data android:scheme="file" android:host="*" android:mimeType="text/plain" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file" android:host="*" android:pathPattern=".*\.html" />
+                <data android:scheme="file" android:host="*" android:pathPattern=".*\.htm" />
+                <data android:scheme="file" android:host="*" android:pathPattern=".*\.xhtml" />
+                <data android:scheme="file" android:host="*" android:pathPattern=".*\.md" />
+                <data android:scheme="file" android:host="*" android:pathPattern=".*\.markdown" />
+                <data android:scheme="file" android:host="*" android:pathPattern=".*\.txt" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
